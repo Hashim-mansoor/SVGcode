@@ -1,1 +1,0 @@
-function e(e){return new Worker(`/assets/preprocessworker-BNVmoJwL.js`,{name:e?.name})}export{e as default};

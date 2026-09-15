@@ -22,12 +22,19 @@
  */
 
 import { VitePWA as vitePWA } from 'vite-plugin-pwa';
+import { cosPlugin } from 'vite-plugin-cross-origin-storage';
 import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
 import webmanifest from './src/manifest.json';
 
 // ignore unused exports default
 export default {
   plugins: [
+    // Libraries other sites ship too, built into chunks named by the SHA-256 of
+    // their contents, so a browser with Cross-Origin Storage keeps one copy for
+    // every site that uses the same version.
+    cosPlugin({
+      packages: ['pinch-zoom-element'],
+    }),
     dynamicImportVars({
       include: ['./src/i18n/*'],
     }),

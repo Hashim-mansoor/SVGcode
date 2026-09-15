@@ -1,0 +1,1 @@
+function e(e){return new Worker(`/assets/preprocessworker-C7jlZguX.js`,{name:e?.name})}export{e as default};
